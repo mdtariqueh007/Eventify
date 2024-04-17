@@ -51,7 +51,7 @@ type EventProps = {
     eventId?: string
 }
 
-const EventForm = ({userId, type, event, eventId}: EventProps) => {
+const  EventForm = ({userId, type, event, eventId}: EventProps) => {
 
     const [files, setFiles] = useState<File[]>([]);
     // const [startDate, setStartDate] = useState(new Date());
@@ -77,7 +77,7 @@ const EventForm = ({userId, type, event, eventId}: EventProps) => {
  
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof eventFormSchema>) {
-    const eventData = values;
+    
 
     let uploadedImageUrl = values.imageUrl;
 
