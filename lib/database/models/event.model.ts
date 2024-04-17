@@ -9,11 +9,11 @@ export interface IEvent extends Document{
     imageUrl: string;
     startDateTime: Date;
     endDateTime: Date;
-    price?: string;
+    price: string;
     isFree: boolean;
     url?: string;
     category: {_id: string, name: string};
-    organizer: {_id: string, institute: string} 
+    organizer: {_id: string,firstName: string, lastName: string, institute: string} 
     institute?: string;
 }
 
@@ -30,7 +30,7 @@ const EventSchema = new Schema({
     url: {type: String},
     category: {type: Schema.Types.ObjectId, ref: 'Category'},
     organizer: {type: Schema.Types.ObjectId, ref: 'User'},
-    institute: {type: String}
+    // institute: {type: String}
 
 
 

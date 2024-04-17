@@ -30,7 +30,7 @@ export type CreateUserParams = {
       price: string
       isFree: boolean
       url: string
-      institute: string
+      // institute: string
     }
     path: string
   }
