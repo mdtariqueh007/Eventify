@@ -24,7 +24,7 @@ const CheckoutButton = ({event}:{event: IEvent}) => {
             (
                 <>
                     <SignedOut>
-                        <Button asChild className='button rounded-full' size="lg">
+                        <Button asChild className='bg-gradient-to-r from-cyan-500 to-blue-500 button rounded-full' size="lg">
                             <Link href="/sign-in">
                                 Get Tickets
                             </Link>
