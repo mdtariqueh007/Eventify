@@ -15,6 +15,7 @@ export interface IEvent extends Document{
     category: {_id: string, name: string};
     organizer: {_id: string,firstName: string, lastName: string, institute: string} 
     institute?: string;
+    budget?: number
 }
 
 const EventSchema = new Schema({
