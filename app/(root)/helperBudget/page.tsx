@@ -5,11 +5,11 @@ import { auth } from '@clerk/nextjs';
 
 import { IEvent } from '@/lib/database/models/event.model';
 
-interface BudgetPageProps {
+type BudgetPageProps = {
   event: IEvent[]; // Define the prop type for events
 }
 
-const BudgetPage: React.FC<BudgetPageProps> = ({event}) => {
+const BudgetPage = async ({event}:BudgetPageProps) => {
 
   // State to store existing events
   const [events, setEvents] = useState<IEvent[]>(event);
