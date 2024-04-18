@@ -29,6 +29,25 @@ const SponsorManagementPage: React.FC = () => {
     date: '',
   });
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleAddSponsor = () => {
+    const newSponsor: Sponsor = {
+      id: sponsors.length + 1,
+      name,
+      email,
+      status: '',
+      selected: false,
+    };
+    setSponsors([...sponsors, newSponsor]);
+    setIsModalOpen(false);
+    setName('');
+    setEmail('');
+  };
+
+
   // Function to handle sending advertisement with event details
   const sendAdvertisement = () => {
     // Simulate sending advertisement to selected sponsors
@@ -99,12 +118,44 @@ const SponsorManagementPage: React.FC = () => {
         </table>
       </div>
 
-      <Button asChild size="lg" className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
-            <Link href="/manageSponsor">
-              Manage Sponsor
-            </Link>
-          </Button>
+      <Button onClick={() => setIsModalOpen(true)} className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 mb-5 rounded-full">
+        Add Sponsors
+      </Button>
 
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
+          <div className="bg-white rounded-lg p-8 max-w-md w-full">
+            <h2 className="text-xl font-bold mb-4">Add Sponsor</h2>
+            <div className="mb-4">
+              <label htmlFor="sponsorName" className="block mb-1">Name:</label>
+              <input
+                type="text"
+                id="sponsorName"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full border border-gray-300 rounded p-2"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="sponsorEmail" className="block mb-1">Email:</label>
+              <input
+                type="email"
+                id="sponsorEmail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full border border-gray-300 rounded p-2"
+              />
+            </div>
+            <button onClick={handleAddSponsor} className="bg-blue-500 text-white px-4 py-2 rounded">
+              Add Sponsor
+            </button>
+            <button onClick={() => setIsModalOpen(false)} className="bg-gray-300 text-gray-800 px-4 py-2 rounded ml-2">
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
       {/* Send Advertisement Form with Event Details */}
       <div>
         <h2 className="text-2xl font-bold mb-2">Send Advertisement with Event Details</h2>
@@ -162,7 +213,7 @@ const SponsorManagementPage: React.FC = () => {
             placeholder="Enter advertisement content"
           ></textarea>
         </div>
-        <Button onClick={sendAdvertisement} className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
+        <Button onClick={sendAdvertisement} className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 mb-5 rounded-full">
           Send Advertisement
         </Button>
       </div>
