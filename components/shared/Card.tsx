@@ -23,7 +23,7 @@ const Card = ({event, hasOrderLink, hidePrice}: CardProps) => {
     const hasEventFinished = new Date(event.endDateTime) < new Date();
 
   return (
-    <div className='group relative flex min-h-[380px] w-full max-w-[480px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg md:min-h-[438px]'>
+    <div className='group relative flex min-h-[380px] w-full max-w-[480px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-2xl md:min-h-[438px]'>
         <Link 
             href={`/events/${event._id}`}
             style={{backgroundImage: `url(${event.imageUrl})`}}
@@ -39,6 +39,7 @@ const Card = ({event, hasOrderLink, hidePrice}: CardProps) => {
                         alt = "edit"
                         width = {20}
                         height= {20}
+                        className='image-transition'
                     />
                 </Link>
                 <DeleteConfirmation eventId = {event._id}/>

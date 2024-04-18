@@ -99,7 +99,7 @@ const SponsorManagementPage: React.FC = () => {
         </table>
       </div>
 
-      <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
+      <Button asChild size="lg" className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
             <Link href="/manageSponsor">
               Manage Sponsor
             </Link>
@@ -162,7 +162,7 @@ const SponsorManagementPage: React.FC = () => {
             placeholder="Enter advertisement content"
           ></textarea>
         </div>
-        <Button onClick={sendAdvertisement} className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
+        <Button onClick={sendAdvertisement} className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
           Send Advertisement
         </Button>
       </div>

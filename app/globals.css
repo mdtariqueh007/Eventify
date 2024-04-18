@@ -274,3 +274,29 @@ body {
 .react-datepicker__time-list-item--selected {
   background-color: #624cf5 !important;
 }
+
+.image-transition {
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-transition:hover {
+  transform: scale(1.05);
+}
+
+.typewriter {
+  overflow: hidden; /* Hide overflow text */
+  white-space: wrap; /* Keep the text in one line */
+  margin: 0 auto; /* Center align */
+  letter-spacing: .10em; /* Adjust letter spacing */
+  animation: typing 2.5s steps(40, end) forwards; /* Only run the typing animation once */
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

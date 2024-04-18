@@ -61,7 +61,7 @@ const SponsorForm: React.FC<SponsorFormProps> = ({  initialSponsor }) => {
         />
       </div>
       <div className="flex items-center justify-between">
-        <Button type="submit" className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded focus:outline-none focus:shadow-outline">
+        <Button type="submit" className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded focus:outline-none focus:shadow-outline">
           {initialSponsor ? 'Update Sponsor' : 'Add Sponsor'}
         </Button>
       </div>

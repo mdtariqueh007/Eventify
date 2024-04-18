@@ -76,7 +76,7 @@ const handleIncreaseBudget = (id: number) => {
                     }}
                     className="w-20 border border-gray-300 rounded p-2 mr-2"
                   />
-                  <Button onClick={() => handleIncreaseBudget(event.id)} className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
+                  <Button onClick={() => handleIncreaseBudget(event.id)} className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-full">
                     Increase
                   </Button>
                 </td>

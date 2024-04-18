@@ -70,7 +70,7 @@ const TestimonialPage: React.FC = () => {
             <label htmlFor="content" className="block text-gray-700">Testimonial:</label>
             <textarea id="content" name="content" value={formValues.content} onChange={handleChange} className="w-full h-20 border border-gray-300 rounded p-2" />
           </div>
-          <Button type="submit" className="bg-gradient-to-r from-cyan-500 to-blue-500 button">Submit Testimonial</Button>
+          <Button type="submit" className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 button">Submit Testimonial</Button>
         </form>
       </div>
     </div>

@@ -14,7 +14,7 @@ const Footer = () => {
             height={38}
           />
         </Link>
-        <p>2024 Eventify. All Rights reserved.</p>
+        <p>Developed with ❤️ by <span className='font-bold'>Md Tarique Hussain</span></p>
       </div>
     </footer>
   )
