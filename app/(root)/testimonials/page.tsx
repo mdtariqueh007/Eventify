@@ -11,12 +11,14 @@ const TestimonialPage: React.FC = () => {
       name: 'John Doe',
       position: 'CEO, Company A',
       content: 'Working with this platform has been an incredible experience. Their team provided top-notch service and helped us achieve our goals efficiently.',
+      image: '/assets/images/c1.jpg', // Add image URL
     },
     {
       id: '2',
       name: 'Jane Smith',
       position: 'Marketing Director, Company B',
       content: 'I highly recommend this platform to anyone looking for reliable solutions. Their dedication to customer satisfaction is unmatched.',
+      image: '/assets/images/c2.jpg', // Add image URL
     },
   ]);
 
@@ -39,6 +41,7 @@ const TestimonialPage: React.FC = () => {
     const newTestimonial = {
       id: (testimonials.length + 1).toString(),
       ...formValues,
+      image: '/assets/images/c_def.jpg', // Add default image URL or leave it empty
     };
     setTestimonials([...testimonials, newTestimonial]);
     setFormValues({
@@ -70,11 +73,11 @@ const TestimonialPage: React.FC = () => {
             <label htmlFor="content" className="block text-gray-700">Testimonial:</label>
             <textarea id="content" name="content" value={formValues.content} onChange={handleChange} className="w-full h-20 border border-gray-300 rounded p-2" />
           </div>
-          <Button type="submit" className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 button">Submit Testimonial</Button>
+          <Button type="submit" className="image-transition bg-gradient-to-r from-cyan-500 to-blue-500 button mb-5">Submit Testimonial</Button>
         </form>
       </div>
     </div>
   );
 };
 
-export default TestimonialPage
+export default TestimonialPage;
