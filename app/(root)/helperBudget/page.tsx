@@ -33,6 +33,7 @@ export default function BudgetPage({event} : BudgetPageProps){
   };
 
   return (
+    <>
     <div className="container mx-auto">
       <h1 className="text-4xl font-bold text-center mb-12 text-blue-600">Budget Management</h1>
 
@@ -80,6 +81,7 @@ export default function BudgetPage({event} : BudgetPageProps){
         </table>
       </div>
     </div>
+    </>
   );
 };
 
