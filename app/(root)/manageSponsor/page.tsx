@@ -3,7 +3,7 @@ import React from 'react'
 
 const ManageSponsor = () => {
   return (
-    <SponsorForm initialSponsor={{ name: '', email: '' }} onSubmit={() => {}} />
+    <SponsorForm initialSponsor={{ name: '', email: '' }} />
   )
 }
 

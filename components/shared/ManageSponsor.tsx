@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 interface SponsorFormProps {
-  onSubmit(newSponsor: Sponsor): void; // onSubmit function written as a function
+//   onSubmit(newSponsor: Sponsor): void; // onSubmit function written as a function
   initialSponsor?: Sponsor;
 }
 
@@ -17,7 +17,7 @@ interface Sponsor {
   email: string;
 }
 
-const SponsorForm: React.FC<SponsorFormProps> = ({ onSubmit, initialSponsor }) => {
+const SponsorForm: React.FC<SponsorFormProps> = ({  initialSponsor }) => {
   const [sponsor, setSponsor] = useState<Sponsor>(initialSponsor || { name: '', email: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

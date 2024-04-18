@@ -20,16 +20,16 @@ const BudgetPage: FC<BudgetPageProps> = ({event}) => {
   // Function to handle increasing budget
   const handleIncreaseBudget = (id: number) => {
     const increaseValue = parseInt(increaseAmounts[id]);
-    if (!isNaN(increaseValue)) {
-      setEvents(prevEvents => prevEvents.map(event =>
-        event.id === id ? { ...event, budget: event.budget + increaseValue } : event
-      ));
-      // Clear input field after increasing budget
-      setIncreaseAmounts(prevAmounts => ({
-        ...prevAmounts,
-        [id]: '',
-      }));
-    }
+    // if (!isNaN(increaseValue)) {
+    //   setEvents(prevEvents => prevEvents.map(event =>
+    //     event.id === id ? { ...event, budget: event.budget + increaseValue } : event
+    //   ));
+    //   // Clear input field after increasing budget
+    //   setIncreaseAmounts(prevAmounts => ({
+    //     ...prevAmounts,
+    //     [id]: '',
+    //   }));
+    // }
   };
 
   return (
