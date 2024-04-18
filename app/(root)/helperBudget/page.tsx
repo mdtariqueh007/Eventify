@@ -5,11 +5,11 @@ import { Button } from '@/components/ui/button';
 
 import { IEvent } from '@/lib/database/models/event.model';
 
-interface BudgetPageProps {
+type BudgetPageProps =  {
   event: IEvent[]; // Define the prop type for events
 }
 
-const BudgetPage: React.FC<BudgetPageProps> = ({event}) => {
+export default function BudgetPage({event} : BudgetPageProps){
 
   // State to store existing events
   const [events, setEvents] = useState<IEvent[]>(event);
@@ -83,4 +83,3 @@ const BudgetPage: React.FC<BudgetPageProps> = ({event}) => {
   );
 };
 
-export default BudgetPage;
