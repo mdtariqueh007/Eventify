@@ -1,15 +1,15 @@
 'use client'
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { auth } from '@clerk/nextjs';
+// import { auth } from '@clerk/nextjs';
 
 import { IEvent } from '@/lib/database/models/event.model';
 
-type BudgetPageProps = {
+interface BudgetPageProps {
   event: IEvent[]; // Define the prop type for events
 }
 
-const BudgetPage = async ({event}:BudgetPageProps) => {
+const BudgetPage: React.FC<BudgetPageProps> = ({event}) => {
 
   // State to store existing events
   const [events, setEvents] = useState<IEvent[]>(event);
@@ -20,16 +20,16 @@ const BudgetPage = async ({event}:BudgetPageProps) => {
   // Function to handle increasing budget
   const handleIncreaseBudget = (id: number) => {
     const increaseValue = parseInt(increaseAmounts[id]);
-    if (!isNaN(increaseValue)) {
-      setEvents(prevEvents => prevEvents.map(event =>
-        event.id === id ? { ...event, budget: event.budget + increaseValue } : event
-      ));
-      // Clear input field after increasing budget
-      setIncreaseAmounts(prevAmounts => ({
-        ...prevAmounts,
-        [id]: '',
-      }));
-    }
+    // if (!isNaN(increaseValue)) {
+    //   setEvents(prevEvents => prevEvents.map(event =>
+    //     event.id === id ? { ...event, budget: event.budget + increaseValue } : event
+    //   ));
+    //   // Clear input field after increasing budget
+    //   setIncreaseAmounts(prevAmounts => ({
+    //     ...prevAmounts,
+    //     [id]: '',
+    //   }));
+    // }
   };
 
   return (
