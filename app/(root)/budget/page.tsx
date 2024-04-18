@@ -22,10 +22,10 @@ const Budget = async ({searchParams}:SearchParamProps) => {
 
     
     let x = 1;
-    const mini = 10000;
-    const maxi = 1000000;
+    const mini = 1;
+    const maxi = 100;
     const events = data.map((event: IEvent) => {
-        return {...event, budget: Number(Math.floor(Math.random() * ((maxi-mini+1)+mini)) + 1), id:x++}
+        return {...event, budget: Number(Math.floor(Math.random() * ((maxi-mini+1)+mini)) + 1)*1000, id:x++}
     })
 
     
