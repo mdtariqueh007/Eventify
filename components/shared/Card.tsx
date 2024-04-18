@@ -20,6 +20,8 @@ const Card = ({event, hasOrderLink, hidePrice}: CardProps) => {
 
     const isEventCreator = userId === event.organizer._id.toString();
 
+    const hasEventFinished = new Date(event.endDateTime) < new Date();
+
   return (
     <div className='group relative flex min-h-[380px] w-full max-w-[480px] flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg md:min-h-[438px]'>
         <Link 
@@ -68,10 +70,26 @@ const Card = ({event, hasOrderLink, hidePrice}: CardProps) => {
                 </p>
             </Link>
 
-            <div className='flex-between w-full'>
-                <p className='p-medium-14 md:p-medium-16 text-grey-600'>
+            <div className='flex-col w-full'>
+                <div className='flex gap-2'>
+                    <Image
+                        src = "/assets/icons/location-grey.svg"
+                        alt = "location"
+                        height={20}
+                        width={20}
+                    />
+                    <p className='p-medium-14 md:p-medium-16 text-grey-600'>
+                        {event.location}
+                    </p>
+                </div>
+                {/* <p className='p-medium-14 md:p-medium-16 text-grey-600'>
                     {event.organizer.firstName} {event.organizer.lastName}
-                </p>
+                </p> */}
+                {
+                    hasEventFinished ? (
+                        <p className='font-bold p-2 text-red-500'>EVENT CONCLUDED</p>
+                    ):('')
+                }
 
                 {hasOrderLink && (
                     <Link
