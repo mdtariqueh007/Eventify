@@ -8,7 +8,7 @@ import Link from 'next/link';
 import Collection from '@/components/shared/Collection';
 import { eventFormSchema } from '@/lib/validator';
 import { IEvent } from '@/lib/database/models/event.model';
-import BudgetPage from '../helperBudget/page';
+import BudgetPage from '@/components/shared/Budget';
 
 const Budget = async ({searchParams}:SearchParamProps) => {
     const {sessionClaims} = auth();
