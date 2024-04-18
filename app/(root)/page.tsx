@@ -45,7 +45,7 @@ export default async function Home({searchParams}: SearchParamProps) {
       
       <section id = "events" className="wrapper my-8 flex flex-col gpa-8 md:gap-12">
         <h2 className="h2-bold"> The Trusted Choice for <br />Countless Events, Every Time.</h2>
-        <div className="flex w-full flex-col gap-5 md:flex-row">
+        <div className="flex w-full flex-col gap-5 md:flex-row py-3">
 
           <Search />
           <CategoryFilter/>
