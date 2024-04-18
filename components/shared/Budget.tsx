@@ -18,19 +18,27 @@ const BudgetPage: FC<BudgetPageProps> = ({event}) => {
   const [increaseAmounts, setIncreaseAmounts] = useState<{ [key: number]: string }>({});
 
   // Function to handle increasing budget
-  const handleIncreaseBudget = (id: number) => {
-    const increaseValue = parseInt(increaseAmounts[id]);
-    // if (!isNaN(increaseValue)) {
-    //   setEvents(prevEvents => prevEvents.map(event =>
-    //     event.id === id ? { ...event, budget: event.budget + increaseValue } : event
-    //   ));
-    //   // Clear input field after increasing budget
-    //   setIncreaseAmounts(prevAmounts => ({
-    //     ...prevAmounts,
-    //     [id]: '',
-    //   }));
-    // }
-  };
+  // Function to handle increasing budget
+  // Function to handle increasing budget
+  // Function to handle increasing budget
+const handleIncreaseBudget = (id: number) => {
+  const increaseValue = parseInt(increaseAmounts[id]);
+  if (!isNaN(increaseValue)) {
+    setEvents(prevEvents =>
+      prevEvents.map(event =>
+        event.id === id ? { ...event, budget: (event.budget ?? 0) + increaseValue } : event
+      ) as IEvent[]
+    );
+    // Clear input field after increasing budget
+    setIncreaseAmounts(prevAmounts => ({
+      ...prevAmounts,
+      [id]: '',
+    }));
+  }
+};
+
+
+
 
   return (
     <>
