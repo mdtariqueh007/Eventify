@@ -14,7 +14,7 @@ const Footer = () => {
             height={38}
           />
         </Link>
-        <p>Developed with ❤️ by <span className='font-bold'>Md Tarique Hussain</span></p>
+        <p>Developed with ❤️ by <a href="mailto:mdtariqueh007@gmail.com" className="font-bold">Md Tarique Hussain</a></p>
       </div>
     </footer>
   )
